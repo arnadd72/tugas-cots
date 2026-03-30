@@ -51,7 +51,6 @@
 <hr>
 
 
-# 📘 README - Aplikasi Syariah Komputer
 
 ## 📖 Deskripsi Aplikasi
 Aplikasi **Syariah Komputer** merupakan sistem informasi sederhana berbasis web yang digunakan untuk mengelola data part komputer. Aplikasi ini mengimplementasikan konsep **CRUD (Create, Read, Update, Delete)** menggunakan arsitektur **client-server** dengan pendekatan **REST API**.
@@ -95,7 +94,7 @@ Fitur utama:
 ## 3. Struktur Folder Project
 
 ```bash
-syariah-komputer/
+tugas-cots-2311102180/
 ├── server.js
 ├── package.json
 ├── public/
@@ -106,9 +105,9 @@ syariah-komputer/
 │
 └── assets/
     ├── beranda.png
-    ├── edit part.png
-    ├── tambah part.png
-    ├── hapus part.png
+    ├── edit_part.png
+    ├── tambah_part.png
+    ├── hapus_part.png
 ```
 
 ### Penjelasan

@@ -24,7 +24,7 @@
   <h3>Disusun Oleh :</h3>
 
   <p>
-    <strong>rnanda Setya Nosa Putra</strong><br>
+    <strong>Arnanda Setya Nosa Putra</strong><br>
     <strong>2311102180</strong><br>
     <strong>S1 IF-11-04</strong>
   </p>
@@ -51,214 +51,525 @@
 <hr>
 
 
-# Dasar Praktikum
-Buatlah sebuah aplikasi web sederhana yang memiliki minimal 3 (tiga) halaman fungsional yang mencakup Form, Halaman Data (Tabel), dan fungsionalitas CRUD (Create, Read, Update, Delete).
+# 📘 README - Aplikasi Syariah Komputer
 
-A. Spesifikasi Teknis Pengembangan (Wajib):
+## 📖 Deskripsi Aplikasi
+Aplikasi **Syariah Komputer** merupakan sistem informasi sederhana berbasis web yang digunakan untuk mengelola data part komputer. Aplikasi ini mengimplementasikan konsep **CRUD (Create, Read, Update, Delete)** menggunakan arsitektur **client-server** dengan pendekatan **REST API**.
 
-1. Aplikasi harus menggunakan Framework Bootstrap sebagai styling.
-2. Aplikasi harus dibangun menggunakan Framework CodeIgniter (CI) atau NodeJS (express, fastify, atau berbasis library lain nya).
-3. Struktur Halaman: Minimal terdiri dari 3 halaman utama:
-    - Halaman Form (Input Data)
-    - Halaman Tabel / Tampil Data
-    - Fungsionalitas CRUD yang berjalan dengan baik.
-4. Wajib menggunakan jQuery dan jQuery plugin.
-5. Data yang ditampilkan pada tabel wajib menggunakan format data JSON, yang diimplementasikan menggunakan datatable Jquery.
+Frontend dibangun menggunakan HTML, Bootstrap, dan jQuery, sedangkan backend menggunakan Node.js dengan framework Express.js. Data disimpan sementara dalam memori server (*in-memory storage*) dan dikirim dalam format JSON.
 
+---
 
-# Dasar Teori
-## 1. Node.js
-Node.js adalah runtime environment JavaScript yang berjalan di sisi server, dibangun di atas V8 JavaScript Engine milik Google Chrome. Node.js memungkinkan JavaScript yang sebelumnya hanya berjalan di browser, kini dapat digunakan untuk membangun aplikasi server-side. Node.js menggunakan model non-blocking I/O dan event-driven architecture, sehingga mampu menangani banyak koneksi secara bersamaan dengan performa tinggi dan efisiensi memori yang baik. Node.js banyak digunakan untuk membangun aplikasi web, REST API, dan layanan real-time.
+## 1. Dasar Teori
 
-## 2. Express.js
-Express.js adalah framework web minimalis dan fleksibel yang berjalan di atas Node.js. Express menyederhanakan proses pembuatan aplikasi web dan API dengan menyediakan berbagai fitur seperti routing, middleware, dan pengelolaan request-response HTTP. Dengan Express, developer dapat mendefinisikan route untuk berbagai metode HTTP (GET, POST, PUT, DELETE) secara sederhana dan terstruktur. Express merupakan framework paling populer di ekosistem Node.js dan menjadi fondasi dari banyak framework Node.js lainnya.
+**CRUD (Create, Read, Update, Delete)** merupakan konsep dasar dalam pengelolaan data pada aplikasi. CRUD memungkinkan pengguna untuk menambah, melihat, mengubah, dan menghapus data secara dinamis.
 
-## 3. Bootstrap
-Bootstrap adalah framework CSS open-source yang dikembangkan oleh Twitter, digunakan untuk membangun tampilan antarmuka web yang responsif dan konsisten. Bootstrap menyediakan koleksi komponen UI siap pakai seperti grid system, form, button, navbar, dan utility classes yang memudahkan proses styling tanpa harus menulis CSS dari nol. Bootstrap menggunakan sistem grid 12 kolom berbasis flexbox yang memungkinkan layout menyesuaikan diri secara otomatis pada berbagai ukuran layar, mulai dari mobile hingga desktop. Pada aplikasi ini digunakan Bootstrap versi 5.3.2.
+**Node.js** adalah runtime JavaScript berbasis server yang menggunakan arsitektur event-driven dan non-blocking I/O sehingga efisien dalam menangani banyak request.
 
-## 4. jQuery
-jQuery adalah library JavaScript yang dirancang untuk menyederhanakan manipulasi DOM, penanganan event, animasi, dan komunikasi AJAX. Dengan sintaks yang ringkas, jQuery memungkinkan developer melakukan operasi yang kompleks dengan kode yang jauh lebih singkat dibandingkan JavaScript vanilla. jQuery menjadi salah satu library JavaScript paling banyak digunakan di dunia dan menjadi fondasi bagi banyak plugin JavaScript lainnya. Pada aplikasi ini, jQuery digunakan untuk melakukan operasi AJAX dalam komunikasi antara frontend dan backend API.
+**Express.js** merupakan framework backend yang digunakan untuk membangun REST API dan mengelola routing HTTP.
 
-## 5. jQuery DataTable
-jQuery DataTables adalah plugin jQuery yang powerful untuk menampilkan data dalam bentuk tabel interaktif. DataTables menyediakan fitur-fitur canggih secara otomatis seperti pencarian data real-time, pengurutan kolom, pagination, dan pengaturan jumlah data yang ditampilkan per halaman. DataTables mendukung berbagai sumber data termasuk array JavaScript, dokumen HTML, dan format JSON yang diambil dari server melalui AJAX. Pada aplikasi ini, DataTables dikonfigurasi untuk mengambil data langsung dari endpoint API yang mengembalikan response dalam format JSON.
+**Bootstrap** adalah framework CSS untuk membuat tampilan web responsif dengan komponen siap pakai.
 
-## 6. JSON (JavaScript Object Notation)
-JSON adalah format pertukaran data yang ringan dan mudah dibaca oleh manusia maupun mesin. JSON menggunakan struktur pasangan key-value dan mendukung tipe data seperti string, number, boolean, array, dan object. JSON telah menjadi standar de facto untuk pertukaran data dalam aplikasi web modern, terutama dalam komunikasi antara client dan server melalui REST API. Pada aplikasi ini, JSON digunakan sebagai media penyimpanan data produk dalam file products.json, sekaligus sebagai format response dari seluruh endpoint API yang dikonsumsi oleh jQuery DataTables.
+**jQuery** digunakan untuk mempermudah manipulasi DOM dan komunikasi AJAX.
 
-## 7. REST API
-REST (Representational State Transfer) API adalah arsitektur antarmuka pemrograman aplikasi yang menggunakan protokol HTTP sebagai media komunikasi. REST API menggunakan metode HTTP standar untuk mendefinisikan operasi terhadap data, yaitu GET untuk mengambil data, POST untuk membuat data baru, PUT untuk memperbarui data, dan DELETE untuk menghapus data. Prinsip ini selaras dengan konsep CRUD (Create, Read, Update, Delete) yang menjadi dasar pengelolaan data pada aplikasi web. Pada aplikasi ini, seluruh operasi CRUD dilakukan melalui endpoint REST API yang dibangun menggunakan Express.js.
+**DataTables** adalah plugin jQuery yang digunakan untuk membuat tabel interaktif dengan fitur search, sorting, dan pagination.
 
-# PENGERJAAN
-## 1.1 Penggunaan Framework Bootstrap sebagai Styling
-Bootstrap 5.3.2 digunakan sebagai framework CSS utama di seluruh halaman aplikasi. Bootstrap menyediakan sistem grid responsif, komponen UI siap pakai (form, button, table), dan utility classes untuk menyusun layout antarmuka.
+**JSON** digunakan sebagai format pertukaran data antara client dan server.
 
-Kode Program - CDN Bootstrap
+---
+
+## 2. Deskripsi Aplikasi
+
+Aplikasi **Syariah Komputer** merupakan sistem manajemen data part komputer berbasis web yang dibangun menggunakan Node.js dan Express.
+
+Fitur utama:
+- Menampilkan data part komputer
+- Menambahkan data baru
+- Mengedit data
+- Menghapus data
+- Tabel interaktif dengan DataTables
+- Data berbasis JSON (tanpa database)
+
+---
+
+## 3. Struktur Folder Project
+
+```bash
+syariah-komputer/
+├── server.js
+├── package.json
+├── public/
+│   ├── index.html
+│   ├── tambah.html
+│   ├── edit.html
+│   ├── script.js
+│
+└── assets/
+    ├── beranda.png
+    ├── edit part.png
+    ├── tambah part.png
+    ├── hapus part.png
 ```
-<!-- Bootstrap 5.3.2 CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-      rel="stylesheet"/>
- 
-<!-- Bootstrap 5.3.2 JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js">
-</script>
-```
-Kode Program - Penggunaan Class Bootstrap
-```
-<div class="container-fluid px-4 py-4">    <!-- Container responsif -->
-  <div class="table-responsive">            <!-- Tabel responsif -->
-    <div class="d-flex gap-2">              <!-- Flexbox Bootstrap -->
-      <div class="row g-3 mb-4">            <!-- Grid system -->
-        <div class="col-7"> ... </div>      <!-- 12-kolom grid -->
-```
-Tampilan halaman utama (localhost:3000) & layout menggunakan komponen Bootstrap
-<p align="center"><img width="1919" height="967" alt="image" src="https://github.com/user-attachments/assets/2561eff8-1638-4f5e-9a5d-589a3fe9b673" />
-</p>
 
-## 1.2 Framework NodeJS (Express)
-Aplikasi dibangun menggunakan NodeJS sebagai runtime JavaScript sisi server dengan Express.js sebagai web framework. Express menangani routing halaman HTML dan seluruh endpoint REST API untuk operasi CRUD.
+### Penjelasan
 
-Kode Program - Dependencies (package.json)
+| File | Keterangan |
+|------|-----------|
+| server.js | Backend Express |
+| public/ | File frontend |
+| assets/ | Gambar dokumentasi |
+
+---
+
+## 4. Cara Menjalankan Aplikasi
+
+```bash
+npm install
+node server.js
 ```
-{
-  "name": "sportzone-app",
-  "dependencies": {
-    "express": "^4.18.2"
-  }
-}
+
+Akses:
 ```
-Kode Program - Inisialisasi Express (app.js)
+http://localhost:3000
 ```
+
+---
+
+## 5. Kode Program
+
+### A. server.js
+
+```javascript
 const express = require('express');
+const path = require('path');
 const app = express();
-const PORT = 3000;
- 
-app.use(express.json());
+const port = 3000;
+
+app.use(express.json({ limit: '10kb' })); 
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+
 app.use(express.static(path.join(__dirname, 'public')));
- 
-app.listen(PORT, () => {
-  console.log(`✅ SportZone berjalan di http://localhost:${PORT}`);
+
+let products = [];
+
+app.get('/api/products', (req, res) => {
+    res.status(200).json({ data: products });
+});
+
+app.post('/api/products', (req, res) => {
+    const { nama, kategori, harga, stok } = req.body;
+    
+    // Validasi ketat mencegah injeksi data kosong
+    if (!nama || !kategori || !harga || !stok) {
+        return res.status(400).json({ error: "Data part tidak boleh kosong!" });
+    }
+
+    const newProduct = {
+        id: Date.now(), 
+        nama, 
+        kategori, 
+        harga: parseInt(harga), 
+        stok: parseInt(stok)
+    };
+    
+    products.push(newProduct);
+    res.status(201).json({ message: "Part berhasil ditambahkan!" });
+});
+
+app.get('/api/products/:id', (req, res) => {
+    const product = products.find(p => p.id === parseInt(req.params.id));
+    if (!product) return res.status(404).json({ error: "Part tidak ditemukan" });
+    res.status(200).json(product);
+});
+
+app.put('/api/products/:id', (req, res) => {
+    const { nama, kategori, harga, stok } = req.body;
+    const index = products.findIndex(p => p.id === parseInt(req.params.id));
+    
+    if (index === -1) {
+        return res.status(404).json({ error: "Part tidak ditemukan" });
+    }
+
+    products[index] = { ...products[index], nama, kategori, harga, stok };
+    res.status(200).json({ message: "Part berhasil diperbarui!" });
+});
+
+app.delete('/api/products/:id', (req, res) => {
+    products = products.filter(p => p.id !== parseInt(req.params.id));
+    res.status(200).json({ message: "Part berhasil dihapus!" });
+});
+
+app.listen(port, () => {
+    console.log(`[SECURITY-OK] Server Part Komputer berjalan di http://localhost:${port}`);
 });
 ```
-Tampilan PORT pada terminal
-<p align="center"><img width="760" height="178" alt="image" src="https://github.com/user-attachments/assets/047fe538-5933-4934-8983-a62654169cd1" /></p>
-
-## 1.3 Struktur 3 Halaman Fungsional + Fungsionalitas CRUD
-Aplikasi memiliki 4 halaman fungsional yang dapat diakses secara independen. Fungsionalitas CRUD berjalan melalui REST API Express dengan penyimpanan data ke file products.json.
-
-| No | Halaman        | URL         | Fungsi                                   |
-|----|----------------|------------|-------------------------------------------|
-| 1  | Halaman Form   | `/tambah`  | Form input data produk baru (CREATE)      |
-| 2  | Halaman Tabel  | `/`        | Tampil semua data produk (READ)           |
-| 3  | Halaman Detail | `/detail/:id` | Detail satu produk (READ)              |
-| 4  | Halaman Edit   | `/edit/:id`   | Ubah data produk (UPDATE/DELETE)       |
-
-Kode Program - Route Halaman & Enpoint CRUD (app.js)
+### B. Index.html
 ```
-// ── Route Halaman ──────────────────────────────────
-app.get('/',           ...) // Halaman Tabel
-app.get('/tambah',     ...) // Halaman Form Tambah
-app.get('/detail/:id', ...) // Halaman Detail
-app.get('/edit/:id',   ...) // Halaman Form Edit
- 
-// ── API CRUD ────────────────────────────────────────
-app.post('/api/products',        ...) // CREATE
-app.get('/api/products',         ...) // READ semua
-app.get('/api/products/:id',     ...) // READ satu
-app.put('/api/products/:id',     ...) // UPDATE
-app.delete('/api/products/:id',  ...) // DELETE
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syariah Komputer  Manajemen Part</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" 
+          rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">
+             Syariah Komputer
+        </a>
+        
+        <div class="d-flex align-items-center">
+            <span class="badge bg-light text-success border border-light rounded-pill px-3 py-2 shadow-sm">
+                Arnanda Setya Nosa Putra | 2311102180
+            </span>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm bg-white rounded-3">
+                <div class="card-body p-4">
+                    <h2 class="fw-bold text-dark mb-2">Sistem Manajemen Inventaris Part Komputer</h2>
+                    <p class="text-secondary mb-0">
+                        Kelola stok produk, harga, dan kategori part komputer secara  
+                        real time dan aman.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-3 mb-5">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-3">
+            <h5 class="mb-0 fw-semibold"> Data Part Komputer</h5>
+            <a href="tambah.html" class="btn btn-success btn-sm fw-bold shadow-sm">
+                + Tambah Part
+            </a>
+        </div>
+        <div class="card-body p-4">
+            <table id="tabelProduk" class="table table-hover table-bordered w-100">
+                <thead class="table-light">
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="25%">Nama Part</th>
+                        <th width="15%">Kategori</th>
+                        <th width="20%">Harga (Rp)</th>
+                        <th width="15%">Stok Fisik</th>
+                        <th width="20%">Aksi Sistem</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        let table = $('#tabelProduk').DataTable({
+            "ajax": "/api/products",
+            "columns": [
+                { "data": "id" },
+                { "data": "nama" },
+                { "data": "kategori" },
+                { 
+                    "data": "harga",
+                    "render": function(data) {
+                        return new Intl.NumberFormat('id-ID', { 
+                            style: 'currency', currency: 'IDR' 
+                        }).format(data);
+                    }
+                },
+                { 
+                    "data": "stok",
+                    "render": function(data) {
+                        if(data < 5) {
+                            return `<span class="badge bg-danger">${data} (Kritis)</span>`;
+                        }
+                        return `<span class="badge bg-primary">${data}</span>`;
+                    }
+                },
+                {
+                    "data": null,
+                    "render": function(data, type, row) {
+                        return `
+                            <button class="btn btn-warning btn-sm btn-edit fw-bold text-dark shadow-sm" 
+                                    data-id="${row.id}">Edit</button>
+                            <button class="btn btn-danger btn-sm btn-hapus fw-bold shadow-sm" 
+                                    data-id="${row.id}">Hapus</button>
+                        `;
+                    }
+                }
+            ],
+            "language": {
+                "search": "Cari Part:",
+                "lengthMenu": "Tampilkan _MENU_ entri",
+                "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ part",
+                "emptyTable": "Belum ada data part di dalam sistem."
+            }
+        });
+
+        $('#tabelProduk tbody').on('click', '.btn-hapus', function() {
+            let id = $(this).data('id');
+            if(confirm("Tindakan ini tidak dapat dibatalkan. Hapus part ini dari database?")) {
+                $.ajax({
+                    url: `/api/products/${id}`,
+                    type: 'DELETE',
+                    success: function(res) {
+                        table.ajax.reload(null, false); 
+                    },
+                    error: function() {
+                        alert("Gagal menghapus data. Terjadi kesalahan pada server.");
+                    }
+                });
+            }
+        });
+
+        $('#tabelProduk tbody').on('click', '.btn-edit', function() {
+            let id = $(this).data('id');
+            window.location.href = `edit.html?id=${id}`;
+        });
+    });
+</script>
+</body>
+</html>
 ```
-### Halaman Form Tambah Produk
-<p align="center"><img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/b2299a39-ac6a-43a8-ba97-35276465aa02" /></p>
-
-### Halaman Tabel Data Produk
-<p align="center"><img width="1917" height="902" alt="image" src="https://github.com/user-attachments/assets/739c76e4-3026-4778-b43f-5a4ec1ce11f2" /></p>
-
-### Halaman Detail & Edit Data
-<p align="center"><img width="1918" height="903" alt="image" src="https://github.com/user-attachments/assets/9971f166-24a0-4a31-b4c0-3665e9f8e5e9" /></p>
-<p align="center"><img width="1919" height="914" alt="image" src="https://github.com/user-attachments/assets/3581073c-2af8-44f5-91c5-4dd0c5fa375c" /></p>
-
-### Hapus Data
-<p align="center"><img width="1916" height="906" alt="image" src="https://github.com/user-attachments/assets/5c97aea1-5312-49e7-a900-a5b3420f5808" /></p>
-
-### Hasil Operasi CRUD (Tambah, Edit, dan Hapus Data)
-
-- Tambah Data
-<p align="center"><img width="1918" height="909" alt="image" src="https://github.com/user-attachments/assets/859ce593-a126-472b-ae91-380a9b0d3c20" /></p>
-<p align="center"><img width="1352" height="585" alt="image" src="https://github.com/user-attachments/assets/a014c7ad-bad6-498c-a974-40f422d229ab" /></p>
-
-- Edit Data
-<p align="center"><img width="1917" height="908" alt="image" src="https://github.com/user-attachments/assets/c7b228fa-a354-4080-a727-8177759ce5be" /></p>
-<p align="center"><img width="1360" height="574" alt="image" src="https://github.com/user-attachments/assets/cbefed74-8df6-44c3-8ad8-a4fef3820f30" /></p>
-
-- Hapus Data
-<p align="center"><img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/35ab054f-f58c-458a-80fc-1d5604cd4e25" /></p>
-<p align="center"><img width="1915" height="902" alt="image" src="https://github.com/user-attachments/assets/fbe4267a-b600-43d0-9a91-5d507bb9b9ff" /></p>
-
-
-## 1.4 Penggunaan jQuery dan jQuery Plugin
-jQuery 3.7.1 digunakan untuk manipulasi DOM dan komunikasi AJAX ke seluruh endpoint API tanpa reload halaman. jQuery DataTables 1.10.21 digunakan sebagai plugin tabel interaktif yang menyediakan fitur search, sorting, dan pagination secara otomatis.
-
-Kode Program - CDN jQuery & Plugin DataTable
+### C. tambah.html
 ```
-<!-- jQuery 3.7.1 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
- 
-<!-- jQuery DataTable Plugin -->
-<script src=".../datatables/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src=".../datatables/1.10.21/js/dataTables.bootstrap5.min.js"></script>
-```
-Kode Program - jQuery AJAX untuk Operasi DELETE
-```
-$.ajax({
-  url: `/api/products/${id}`,
-  type: 'DELETE',
-  success: function (res) {
-    showToast(`'${res.data.nama}' berhasil dihapus.`);
-    dt.ajax.reload(updateStats, false); // reload tanpa refresh halaman
-  }
-});
-```
-Tampilan DataTable aktif (Dropdown Terbuka & Pagination Terlihat)
-<p align="center"><img width="1359" height="581" alt="image" src="https://github.com/user-attachments/assets/6cc718bf-b2ec-43fd-b00c-feac2d779f46" /></p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Part Komputer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+</head>
+<body class="bg-light">
 
-## 1.5 Format Data JSON dengan jQuery DataTable
-Data produk disimpan dalam file products.json dan disajikan melalui endpoint GET /api/products dalam format JSON. jQuery DataTable dikonfigurasi dengan ajax untuk mengambil dan menampilkan data JSON tersebut secara otomatis.
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Form Input Part Baru</h4>
+        </div>
+        <div class="card-body">
+            <form id="formTambah">
+                <div class="mb-3">
+                    <label>Nama Part</label>
+                    <input type="text" id="nama" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label>Kategori</label>
+                    <select id="kategori" class="form-control" required>
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="CPU">Processor (CPU)</option>
+                        <option value="VGA">Grapic card (VGA)</option>
+                        <option value="RAM">Memori (RAM)</option>
+                        <option value="Motherboard">Motherboard</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Harga (Rp)</label>
+                    <input type="number" id="harga" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label>Stok Fisik</label>
+                    <input type="number" id="stok" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Simpan Part</button>
+                <a href="index.html" class="btn btn-secondary w-100 mt-2">Kembali</a>
+            </form>
+        </div>
+    </div>
+</div>
 
-Kode Program - Struktur File JSON
-```
-[
-  {
-    "id": 1,
-    "nama": "Nike Air Zoom Pegasus 40",
-    "kategori": "Sepatu",
-    "harga": 1850000,
-    "stok": 12,
-    "createdAt": "2025-01-10"
-  }
-]
-```
-Kode Program - Konfigurasi DataTable Ajax JSON
-```
-dt = $('#tblProduk').DataTable({
-  ajax: {
-    url: '/api/products',  // endpoint yang mengembalikan JSON
-    type: 'GET',
-    dataSrc: 'data'        // baca array dari field 'data' di response
-  },
-  columns: [
-    { data: 'id' }, { data: 'nama' }, { data: 'kategori' },
-    { data: 'harga' }, { data: 'stok' }, { data: 'createdAt' },
-    { data: 'id' }   // kolom aksi
-  ],
-  pageLength: 5,
-  lengthMenu: [5, 10, 25, 50]
-});
-```
-Struktur Data JSON
-<p align="center"><img width="1917" height="1018" alt="image" src="https://github.com/user-attachments/assets/5cd3e516-a0c2-4dba-a8aa-9129a02fac3b" /></p>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+    $('#formTambah').submit(function(e) {
+        e.preventDefault();
+        
+        let payload = {
+            nama: $('#nama').val(),
+            kategori: $('#kategori').val(),
+            harga: $('#harga').val(),
+            stok: $('#stok').val()
+        };
 
-Fitur Search DataTable
-<p align="center"><img width="1356" height="352" alt="image" src="https://github.com/user-attachments/assets/d0fe0aee-cd6c-4282-93ed-9b48b02b02dc" /></p>
+        $.ajax({
+            url: '/api/products',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(payload),
+            success: function(res) {
+                alert(res.message);
+                window.location.href = 'index.html';
+            },
+            error: function(err) {
+                alert("Gagal menambahkan data. Periksa sistem.");
+            }
+        });
+    });
+</script>
+</body>
+</html>
+```
+### D. edit.html
+```
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Part Komputer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+</head>
+<body class="bg-light">
 
-# Link Video Presentasi
-Lihat disini: https://drive.google.com/file/d/1DiA1Pct5q_z5Tc56a6cBdw4R_-H-AZwk/view?usp=sharing
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-warning text-dark">
+            <h4 class="mb-0">Form Edit Part</h4>
+        </div>
+        <div class="card-body">
+            <form id="formEdit">
+                <input type="hidden" id="partId">
+                <div class="mb-3">
+                    <label>Nama Part</label>
+                    <input type="text" id="nama" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label>Kategori</label>
+                    <select id="kategori" class="form-control" required>
+                        <option value="CPU">Processor (CPU)</option>
+                        <option value="VGA">Kartu Grafis (VGA)</option>
+                        <option value="RAM">Memori (RAM)</option>
+                        <option value="Motherboard">Motherboard</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Harga (Rp)</label>
+                    <input type="number" id="harga" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label>Stok Fisik</label>
+                    <input type="number" id="stok" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Update Part</button>
+                <a href="index.html" class="btn btn-secondary w-100 mt-2">Batal</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        
+        if(id) {
+            $.get(`/api/products/${id}`, function(data) {
+                $('#partId').val(data.id);
+                $('#nama').val(data.nama);
+                $('#kategori').val(data.kategori);
+                $('#harga').val(data.harga);
+                $('#stok').val(data.stok);
+            }).fail(function() {
+                alert("Data part tidak ditemukan!");
+                window.location.href = 'index.html';
+            });
+        }
+
+        $('#formEdit').submit(function(e) {
+            e.preventDefault();
+            
+            let payload = {
+                nama: $('#nama').val(),
+                kategori: $('#kategori').val(),
+                harga: $('#harga').val(),
+                stok: $('#stok').val()
+            };
+
+            $.ajax({
+                url: `/api/products/${$('#partId').val()}`,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(payload),
+                success: function(res) {
+                    alert(res.message);
+                    window.location.href = 'index.html';
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
+```
+---
+
+## 6. Alur CRUD
+
+### Create
+User menambahkan data melalui form → dikirim ke server (POST)
+
+### Read
+Data ditampilkan di tabel melalui DataTables
+
+### Update
+User edit data → dikirim ke server (PUT)
+
+### Delete
+User hapus data → request DELETE ke server
+
+---
+
+## 7. Screenshot Website
+
+### 1. Halaman Utama
+![](assets/beranda.png)
+
+### 2. Halaman Tambah
+![](assets/tambah_part.png)
+
+### 3. Halaman Edit Data
+![](assets/edit_part.png)
+
+### 4. Halaman Hapus Data
+![](assets/hapus_part.png)
+
+---
+
+## 8. Kesimpulan
+
+Aplikasi ini berhasil mengimplementasikan konsep CRUD berbasis REST API menggunakan Node.js dan Express. Integrasi dengan Bootstrap dan DataTables membuat tampilan menjadi interaktif dan responsif.
+
+---
+
+## 9. Referensi
+
+- https://nodejs.org
+- https://expressjs.com
+- https://getbootstrap.com
+- https://datatables.net
+
+---
+
+## 10. Link Video Presentasi
+
+[MASUKKAN LINK VIDEO DI SINI]

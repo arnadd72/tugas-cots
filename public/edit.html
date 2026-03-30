@@ -48,12 +48,10 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script>
     $(document).ready(function() {
-        // Ekstraksi ID dari URL Parameter (contoh: edit.html?id=1)
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
         
         if(id) {
-            // Tarik data spesifik via API
             $.get(`/api/products/${id}`, function(data) {
                 $('#partId').val(data.id);
                 $('#nama').val(data.nama);
@@ -66,7 +64,6 @@
             });
         }
 
-        // Event eksekusi update (PUT)
         $('#formEdit').submit(function(e) {
             e.preventDefault();
             

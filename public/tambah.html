@@ -48,7 +48,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script>
     $('#formTambah').submit(function(e) {
-        e.preventDefault(); // Mencegah form reload halaman default
+        e.preventDefault();
         
         let payload = {
             nama: $('#nama').val(),
@@ -57,7 +57,6 @@
             stok: $('#stok').val()
         };
 
-        // Mengirim data ke API menggunakan standar keamanan JSON
         $.ajax({
             url: '/api/products',
             type: 'POST',

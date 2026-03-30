@@ -7,8 +7,8 @@
 
   <br />
 
-  <h3>TUGAS COTS-2<br>
-  WEB MANAJEMEN PRODUK "SPORTZONE"
+  <h3>TUGAS COTS-1<br>
+  WEB MANAJEMEN PRODUK KOMPUTER "SYARIAH KOMPUTER"
   </h3>
 
   <br />
@@ -24,9 +24,9 @@
   <h3>Disusun Oleh :</h3>
 
   <p>
-    <strong>Andika Neviantoro</strong><br>
-    <strong>2311102167</strong><br>
-    <strong>S1 IF-11-REG01</strong>
+    <strong>rnanda Setya Nosa Putra</strong><br>
+    <strong>2311102180</strong><br>
+    <strong>S1 IF-11-04</strong>
   </p>
 
   <br />

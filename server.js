@@ -17,7 +17,6 @@ app.get('/api/products', (req, res) => {
 app.post('/api/products', (req, res) => {
     const { nama, kategori, harga, stok } = req.body;
     
-    // Validasi ketat mencegah injeksi data kosong
     if (!nama || !kategori || !harga || !stok) {
         return res.status(400).json({ error: "Data part tidak boleh kosong!" });
     }
